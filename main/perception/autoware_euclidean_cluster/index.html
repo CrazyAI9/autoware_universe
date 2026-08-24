@@ -15931,8 +15931,6 @@
       
         
       
-        
-      
     
     
     
@@ -17708,144 +17706,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_14" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Livox
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_14">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Livox
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_14_1" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../sensing/livox/autoware_livox_tag_filter/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Autoware livox tag filter
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_14_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_14_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Autoware livox tag filter
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
               
             
           </ul>
@@ -23119,7 +22979,8 @@
 <div><h1 id="autoware_euclidean_cluster">autoware_euclidean_cluster<a class="headerlink" href="#autoware_euclidean_cluster" title="Permanent link">#</a></h1>
 <h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">#</a></h2>
 <p>autoware_euclidean_cluster is a package for clustering points into smaller parts to classify objects.</p>
-<p>This package has two clustering methods: <code>euclidean_cluster</code> and <code>voxel_grid_based_euclidean_cluster</code>.</p>
+<p>This package has three clustering methods: <code>euclidean_cluster</code>, <code>voxel_grid_based_euclidean_cluster</code>,
+and <code>label_based_euclidean_cluster</code>.</p>
 <h2 id="inner-workings-algorithms">Inner-workings / Algorithms<a class="headerlink" href="#inner-workings-algorithms" title="Permanent link">#</a></h2>
 <h3 id="euclidean_cluster">euclidean_cluster<a class="headerlink" href="#euclidean_cluster" title="Permanent link">#</a></h3>
 <p><code>pcl::EuclideanClusterExtraction</code> is applied to points. See <a href="https://pcl.readthedocs.io/projects/tutorials/en/master/cluster_extraction.html">official document</a> for details.</p>
@@ -23187,31 +23048,31 @@
 </thead>
 <tbody>
 <tr>
-<td>max_cluster_size</td>
+<td>max_<wbr>cluster_<wbr>size</wbr></wbr></td>
 <td>integer</td>
 <td>The maximum number of points that a cluster needs to contain in order to be considered valid.</td>
 <td>1000</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>min_points_per_cluster</td>
+<td>min_<wbr>points_<wbr>per_<wbr>cluster</wbr></wbr></wbr></td>
 <td>integer</td>
 <td>The minimum number of points that a cluster needs to contain in order to be considered valid.</td>
 <td>10</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>tolerance_m</td>
+<td>tolerance_<wbr>m</wbr></td>
 <td>float</td>
 <td>The spatial cluster tolerance as a measure in the L2 Euclidean space.</td>
 <td>0.7</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>use_height</td>
+<td>use_<wbr>height</wbr></td>
 <td>boolean</td>
 <td>Whether to use point.z for clustering.</td>
-<td>0</td>
+<td>false</td>
 <td>N/A</td>
 </tr>
 </tbody>
@@ -23229,59 +23090,59 @@
 </thead>
 <tbody>
 <tr>
-<td>tolerance_m</td>
+<td>tolerance_<wbr>m</wbr></td>
 <td>float</td>
 <td>Euclidean cluster tolerance. Two occupied voxels are merged into the same cluster when their 2D (x-y) centroid distance is within this value (applied transitively). Clustering is performed on voxel centroids with z flattened to 0.</td>
 <td>0.7</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>voxel_leaf_size_m</td>
+<td>voxel_<wbr>leaf_<wbr>size_<wbr>m</wbr></wbr></wbr></td>
 <td>float</td>
 <td>Voxel leaf size in x and y. The z leaf is effectively infinite, so the grid is 2D and all heights collapse into a single x-y cell. This value bounds the footprint resolution used for clustering and splitting.</td>
 <td>0.3</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>min_points_per_voxel</td>
+<td>min_<wbr>points_<wbr>per_<wbr>voxel</wbr></wbr></wbr></td>
 <td>integer</td>
 <td>Minimum number of raw points a voxel must contain to be kept. Voxels with fewer points are discarded before clustering, rejecting sparse noise.</td>
 <td>1</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>min_points_per_cluster</td>
+<td>min_<wbr>points_<wbr>per_<wbr>cluster</wbr></wbr></wbr></td>
 <td>integer</td>
 <td>Minimum number of raw points a cluster must contain to be included in the output. Smaller clusters are dropped at the final filtering stage.</td>
 <td>10</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>max_voxels_per_cluster</td>
+<td>max_<wbr>voxels_<wbr>per_<wbr>cluster</wbr></wbr></wbr></td>
 <td>integer</td>
 <td>Voxel-count split bound. Any cluster whose voxel count exceeds this is recursively bisected along its principal (longest) axis into smaller sub-clusters until every piece is at or below this size. No cluster is dropped for being large; large groups are exported as multiple bounded sections.</td>
 <td>800</td>
 <td>≥1</td>
 </tr>
 <tr>
-<td>large_cluster_voxel_count_threshold</td>
+<td>large_<wbr>cluster_<wbr>voxel_<wbr>count_<wbr>threshold</wbr></wbr></wbr></wbr></td>
 <td>integer</td>
 <td>Voxel-count threshold above which a cluster is considered 'large' and subject to per-voxel point capping (see large_cluster_max_points_per_voxel). Clusters at or below this size keep all their points.</td>
 <td>65</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>large_cluster_max_points_per_voxel</td>
+<td>large_<wbr>cluster_<wbr>max_<wbr>points_<wbr>per_<wbr>voxel</wbr></wbr></wbr></wbr></wbr></td>
 <td>integer</td>
 <td>Maximum number of points kept per voxel within a large cluster (one whose voxel count exceeds large_cluster_voxel_count_threshold). Excess points are dropped to bound downstream cost; points are processed in a deterministically shuffled order so the kept points sample uniformly across each voxel.</td>
 <td>10</td>
 <td>N/A</td>
 </tr>
 <tr>
-<td>use_height</td>
+<td>use_<wbr>height</wbr></td>
 <td>boolean</td>
 <td>Use point.z for clustering. Currently only the 2D (false) path is implemented.</td>
-<td>0</td>
+<td>false</td>
 <td>N/A</td>
 </tr>
 </tbody>
