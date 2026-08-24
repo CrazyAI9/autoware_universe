@@ -15791,8 +15791,6 @@
       
         
       
-        
-      
     
     
     
@@ -17568,144 +17566,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_14" >
-        
-          
-          <label class="md-nav__link" for="__nav_9_14" id="__nav_9_14_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Livox
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_14">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Livox
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9_14_1" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../sensing/livox/autoware_livox_tag_filter/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Autoware livox tag filter
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_14_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9_14_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Autoware livox tag filter
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
               
             
           </ul>
@@ -22809,24 +22669,24 @@
 <p>See the <a href="https://github.com/google/glog">glog github</a> for the details of its features.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">#</a></h2>
 <p>When you load the <code>glog_component</code> in container, the launch file can be like below:</p>
-<p>```py
-glog_component = ComposableNode(
-    package="autoware_glog_component",
-    plugin="autoware::glog_component::GlogComponent",
-    name="glog_component",
-)</p>
-<p>container = ComposableNodeContainer(
-    name="my_container",
-    namespace="",
-    package="rclcpp_components",
-    executable=LaunchConfiguration("container_executable"),
-    composable_node_descriptions=[
-        component1,
-        component2,
-        glog_component,
-    ],
-)
-```</p></div>
+<div class="highlight"><pre><span></span><code><span class="n">glog_component</span> <span class="o">=</span> <span class="n">ComposableNode</span><span class="p">(</span>
+    <span class="n">package</span><span class="o">=</span><span class="s2">"autoware_glog_component"</span><span class="p">,</span>
+    <span class="n">plugin</span><span class="o">=</span><span class="s2">"autoware::glog_component::GlogComponent"</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"glog_component"</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">container</span> <span class="o">=</span> <span class="n">ComposableNodeContainer</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"my_container"</span><span class="p">,</span>
+    <span class="n">namespace</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+    <span class="n">package</span><span class="o">=</span><span class="s2">"rclcpp_components"</span><span class="p">,</span>
+    <span class="n">executable</span><span class="o">=</span><span class="n">LaunchConfiguration</span><span class="p">(</span><span class="s2">"container_executable"</span><span class="p">),</span>
+    <span class="n">composable_node_descriptions</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">component1</span><span class="p">,</span>
+        <span class="n">component2</span><span class="p">,</span>
+        <span class="n">glog_component</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</code></pre></div></div>
 
 
 
